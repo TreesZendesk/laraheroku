@@ -19,7 +19,11 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
+<<<<<<< HEAD
         // $response = $this->get('');
+=======
+        // $response = $this->get('/nopage');
+>>>>>>> development
 
         // $response->assertStatus(200);
     }
