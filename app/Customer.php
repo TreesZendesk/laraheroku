@@ -8,4 +8,11 @@ class Customer extends Model
 {
     //
     protected $table = 'customer_mst';
+    protected $appends = ['total_distance'];
+    protected $visible = ['customer_code', 'customer_name', 'total_distance'];
+
+    public function getTotalDistanceAttribute($value)
+    {
+        return $this->attributes['standard_km_from'] + $this->attributes['standard_km_to'];
+    }
 }

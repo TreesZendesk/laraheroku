@@ -9,6 +9,6 @@ class EmployeeController extends Controller
     //
     //
     function index() {
-    	return [];
+    
     }
 }

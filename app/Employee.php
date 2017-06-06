@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Employee extends Model implements Authenticatable
+class Employee extends Model
 {
 	use Notifiable;
     //

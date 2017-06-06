@@ -13,6 +13,6 @@ class AbsenceController extends Controller
     }
     
     function bulkUpdate() {
-
+    	
     }
 }

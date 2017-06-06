@@ -7,7 +7,6 @@ use Customer;
 
 class ListService
 {
-    
     private $project;
     private $customer;
 

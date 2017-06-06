@@ -15,24 +15,26 @@ use App\Project;
 
 // API Group Routes
 Route::group(array('prefix' => 'api/v1', 'middleware' => []), function () {
-	Route::get('lists', function() {
+	Route::get('lists.json', function() {
 		$projects = Project::all();
 		$customers = Customer::all();
 
-		return [
+		$lists = [
 			'projects' => $projects,
 			'customers' => $customers
 		];
+
+		return $lists;
 	});
-	Route::post('claims_many', 'ClaimHeaderController@bulk');
-	Route::post('claims/headers', 'ClaimController@postHeader');
-	Route::post('claims/headers/{trx_id}', 'ClaimController@postDetails');
-	Route::post('absence', 'AbsenceController@bulkUpdate');
+	Route::post('claims/create_many.json', 'ClaimController@bulkCreate');
+	Route::post('claims/headers.json', 'ClaimController@postHeader');
+	Route::post('claims/headers/{trx_id}.json', 'ClaimController@postDetails');
+	Route::post('absence.json', 'AbsenceController@bulkCreate');
 });
 
 
-Route::get('/', function () {
-    return "";
+Route::get('*', function () {
+    return "unauthorized";
 });
 
 

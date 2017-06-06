@@ -19,25 +19,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('lists', function() {
-	$projects = Project::all();
-	$customers = Customer::all();
-
-	return [
-		'projects' => $projects,
-		'customers' => $customers
-	];
-});
-
-// API Group Routes
-Route::group(array('prefix' => 'api/v1', 'middleware' => []), function () {
-
-	Route::post('claims_many', 'ClaimHeaderController@bulkUpdate');
-	Route::post('claims/headers', 'ClaimController@postHeader');
-	Route::post('claims/headers/{trx_id}', 'ClaimHeader@postDetails');
-	Route::post('absence', 'AbsenceController@bulkUpdate');
-});
-
 
 
 /**
