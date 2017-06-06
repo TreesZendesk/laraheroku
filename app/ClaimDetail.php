@@ -12,11 +12,7 @@ class ClaimDetail extends Model
 	public $timestamps = false;
 
 
-	public function setClaimDateAttribute($value)
-	{
-		$this->attributes['claim_date'] = Carbon::createFromFormat('d/m/Y', $value)->toDateString();
-	}
-	
+
 	function header() {
 		return $this->belongsTo('App\ClaimHeader', 'trx_id', 'trx_header_id');
 	}

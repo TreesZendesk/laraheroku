@@ -17,6 +17,12 @@ class ClaimHeader extends Model
 		$this->attributes['claim_date'] = Carbon::createFromFormat('d-m-Y', $value);
 	}
 
+	public function getClaimDateAttribute($value)
+	{
+		return $value->format('d-m-Y');
+	}
+
+
 	public function setCreationDateAttribute($value)
 	{
 		$this->attributes['creation_date'] = Carbon::createFromFormat('d-m-Y', $value);
