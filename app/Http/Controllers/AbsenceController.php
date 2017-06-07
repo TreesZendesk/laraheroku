@@ -6,8 +6,6 @@ use Illuminate\Http\Request;
 
 class AbsenceController extends Controller
 {
-    //
-    //
     function __construct() {
 
     }

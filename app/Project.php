@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
-    //
     protected $table = 'project_mst';
+
     protected $appends = ['total_distance'];
+
     protected $visible = ['project_number', 'project_name', 'total_distance'];
 
     public function getTotalDistanceAttribute($value)

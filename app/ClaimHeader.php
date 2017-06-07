@@ -7,9 +7,10 @@ use Carbon\Carbon;
 
 class ClaimHeader extends Model
 {
-    //
     protected $table = 'claim_header';
+
     protected $fillable = ['trx_id', 'claim_date', 'activity_code', 'client_code', 'employee_number', 'toll_from', 'toll_to', 'mileage', 'parking', 'meal', 'created_by', 'creation_date'];
+
     public $timestamps = false;
 
 	public function setClaimDateAttribute($value)
@@ -21,7 +22,6 @@ class ClaimHeader extends Model
 	{
 		return $value->format('d-m-Y');
 	}
-
 
 	public function setCreationDateAttribute($value)
 	{

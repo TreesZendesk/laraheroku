@@ -9,16 +9,15 @@ use App\ClaimDetail;
 
 class ClaimController extends Controller
 {
-    //
 	function __construct() {
 
 	}
     
     function bulkCreate(Request $request, ClaimHeader $header, ClaimDetail $detail) {
-    	$headers = $request->input('claims_headers');
+    	$headers = $request->input('claim_headers');
 
     	if (!$headers || !is_array($headers)) {
-    		return response()->json(['error' => "invalid request body"])->setStatusCode(400, Response::$statusTexts[Response::HTTP_OK]);
+    		return response()->json(['error' => "invalid request body"], 400);
     	}
 
     	$result = [];
@@ -42,9 +41,9 @@ class ClaimController extends Controller
     		}
 
     	}
-    	$response = ['claims_headers' => $result];
+    	$response = ['claim_headers' => $result];
 
-    	return response()->json($response)->setStatusCode(Response::HTTP_OK);
+    	return response()->json($response, 200);
     }
 
     function postHeader(Request $request) {
